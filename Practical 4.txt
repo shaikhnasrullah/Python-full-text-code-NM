@@ -1,0 +1,60 @@
+Practical No. 4
+Aim: Write A Program To Implement Abstract Class, Implement Interface in Python
+A. Interface
+from abc import ABC, abstractmethod
+
+
+class Animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+
+
+    def move(self):
+        pass
+
+
+class dog(Animal):
+    def sound(self):
+        print("bark")
+
+
+    def move(self):
+        print("Run")
+
+
+d = dog()
+d.sound()
+d.move()
+
+
+
+
+
+
+
+
+B. Abstract Method
+
+
+from abc import ABC, abstractmethod
+
+
+class Animal(ABC):
+    def eat(self):
+        print("eating")
+
+
+    @abstractmethod
+    def move(self):
+        pass
+
+
+class dog(Animal):
+    def move(self):
+        print("Run")
+
+
+d = dog()
+d.eat()
+d.move()
