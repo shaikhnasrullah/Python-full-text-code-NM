@@ -1,0 +1,117 @@
+Practical No. 5
+Aim: To understand the concept of Threading and single, multi Tasking.
+Threading in Python
+
+
+
+
+import threading, time
+
+
+def task():
+    print("thread is running")
+    print("waiting for 5 sec")
+    time.sleep(5)
+    print("Task function executed")
+
+
+t = threading.Thread(target=task)
+t.start()
+print("main program finished")
+
+
+
+
+
+
+
+
+A. Single Tasking
+
+
+def task1():
+    for i in range(3):
+        print("TASK 1")
+        time.sleep(0.5)
+
+
+def task2():
+    for i in range(3):
+        print("task 2")
+        time.sleep(1)
+
+
+task1()
+task2()
+
+
+
+
+
+
+
+
+B. Multitasking
+
+
+def task1():
+    for i in range(3):
+        print("TASK 1")
+        time.sleep(0.5)
+
+
+def task2():
+    for i in range(3):
+        print("task 2")
+        time.sleep(1)
+
+
+t1 = threading.Thread(target=task1)
+t1.start()
+t2 = threading.Thread(target=task2)
+t2.start()
+
+
+
+
+
+
+
+
+
+
+Example - Single Tasking
+
+
+def calculator():
+    for i in range(10):
+        print("Number :", i)
+        time.sleep(2)
+
+
+calculator()
+
+
+print("Enter the Input :")
+
+
+
+
+
+
+
+
+
+
+Example - Multitasking
+
+
+def calculator():
+    for i in range(10):
+        print("Number :", i)
+        time.sleep(2)
+
+
+c = threading.Thread(target=calculator)
+c.start()
+print("Enter the Input :")
