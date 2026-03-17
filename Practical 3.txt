@@ -1,0 +1,212 @@
+Constructor Inheritance (Default Parent Constructor)
+
+
+
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+        print(self.name)
+        print("Person constructor called")
+
+
+class Student(Person):
+    def __init__(self, name, student_id):
+        super().__init__(name) # Call Person's constructor
+        self.student_id = student_id
+        print("Student constructor called")
+
+
+    def show_details(self):
+        print(f"Student details: Name={self.name}, ID={self.student_id}")
+
+
+obj = Student("Nasrullah", 44)
+obj.show_details()
+
+
+
+
+
+
+Child Class Constructor Override
+
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+        print(self.name)
+        print("Person constructor called")
+
+
+class Student(Person):
+    def __init__(self, name, roll):
+        super().__init__(name) # Call Person's constructor
+        self.roll = roll
+        print("This Student constructor")
+        print("Student roll no.", self.roll)
+
+
+    def show_details(self):
+        print(f"Student details: Name={self.name}, Roll={self.roll}")
+
+
+obj = Student("Nasrullah", 44)
+obj.show_details()
+
+
+
+
+
+
+
+
+Method Overriding - a) In Constructor
+
+
+class Person:
+    def __init__(self):
+        self.fees = 28313
+
+
+    def total(self):
+        print("Overall fees:", self.fees)
+
+
+class Student(Person):
+    def __init__(self):
+        super().__init__()
+        self.fees = 14156
+
+
+    def total(self):
+        print("Paid fees:", self.fees)
+
+
+nasrullah = Student()
+nasrullah.total()
+
+
+
+
+
+
+
+
+Method Overriding - b) In Methods
+
+
+class Person:
+    def __init__(self):
+        self.fees = 25000
+
+
+    def total(self):
+        return self.fees
+
+
+class Student(Person):
+    def __init__(self):
+        super().__init__()
+        self.fees = 1720
+
+
+    def total(self):
+        return 30000 - self.fees
+
+
+nasrullah = Student()
+print(nasrullah.total())
+
+
+
+
+
+
+
+
+Polymorphism - String
+
+
+x = "Hello World!"
+print(len(x))
+
+
+
+
+
+
+
+
+Polymorphism - Dictionary
+
+
+thisdict = {
+    "brand": "Fors",
+    "model": "Mustang",
+    "year": 1964
+}
+print(len(thisdict))
+
+
+
+
+
+
+
+
+Polymorphism - Class Methods
+
+
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+
+    def move(self):
+        print("Drive!")
+
+
+class Boat:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+
+    def move(self):
+        print("Sail")
+
+
+car1 = Car("Ford", "Mustang")
+boat1 = Boat("Ibiza", "Touring 20")
+
+
+
+
+
+
+
+
+3. Operator Overloading
+
+
+class Base:
+    def __init__(self, data):
+        self.data = data
+
+
+    def __add__(self, other):
+        return self.data + other.data
+
+
+obj1 = Base(10)
+obj2 = Base(20)
+
+
+print("Sum of objects:", obj1 + obj2)
+
+
+fName = input("Enter the first name: ")
+lName = input("Enter the last name: ")
+print("Full name:", fName + " " + lName
