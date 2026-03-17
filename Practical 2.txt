@@ -1,0 +1,224 @@
+1. Types of Variables (Static, Instance, Local)
+class Student:
+    # Static variable (Class level)
+    college_name = "Ismail yousuf college"
+
+
+    def __init__(self, name, age, roll_no):
+        # Instance variables (Object level)
+        self.name = name
+        self.age = age
+        self.roll_no = roll_no
+
+
+    def display(self):
+        # Local variable (Method level)
+        msg = "Student Details"
+        print(f'this is local variable of display()::{msg}')
+
+
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Roll No:", self.roll_no)
+        print("College:", Student.college_name)
+
+
+# Creating object
+s1 = Student("Nasrullah", 18, 44)
+s1.display()
+
+
+
+
+
+
+2A. Instance Method
+
+
+class Birds:
+    species = "Birds" # Class variable
+
+
+    def __init__(self, name, type):
+        self.name = name # Instance variable
+        self.type = type # Instance variable
+
+
+    # -------- Instance Method --------
+    def show_info(self):
+        """
+        Instance method:
+        - Can access instance variables (self.name, self.type)
+        - Can access class variables (Birds.species)
+        - Called via object
+        """
+        return f"{self.name} is a {self.type}. Species: {Birds.species}"
+
+
+# Creating object
+b1 = Birds("Kiara", "pigeon")
+
+
+# Calling instance method
+print(b1.show_info())
+2B. Class Method
+class Birds:
+    species = "Birds" # Class variable
+
+
+    def __init__(self, name):
+        self.name = name # Instance variable
+
+
+    # ------------------ Class Method--------------
+    @classmethod
+    def show_species(cls):
+        """
+        Class method:
+        - Uses 'cls' to access class variables
+        - Cannot access instance variables
+        - Called via class
+        """
+        return f"All birds belong to the species: {cls.species}"
+
+
+# Calling class method
+print(Birds.show_species())
+
+
+
+
+
+
+2C. Static Method
+
+
+class Birds:
+
+
+    # ------------------ Static Method--------------
+    @staticmethod
+    def greet():
+        """
+        Static method:
+        - Cannot access instance or class variables
+        - Independent utility function
+        - Called via class
+        """
+        return "Welcome to the Birds world"
+
+
+# Calling static method
+print(Birds.greet())
+
+
+
+
+
+
+3. Passing Class Members Between Classes
+
+
+class Student:
+    college = "Ismailyousuf college" # Class variable
+
+
+    def __init__(self, name, age):
+        self.name = name # Instance variable
+        self.age = age
+
+
+class Display:
+    def show(self, student):
+        print(f"Name: {student.name}, Age:{student.age}, College: {student.college}")
+
+
+# Creating objects
+s1 = Student("Nasrullah", 18)
+d1 = Display()
+d1.show(s1)
+4A. Single Inheritance
+# Parent class
+class User:
+    def login(self):
+        print("User logged in")
+
+
+# Child Class
+class Student(User):
+    def access_course(self):
+        print("Student is accessing course content")
+
+
+# Using the classes
+s1 = Student()
+s1.login()
+s1.access_course()
+
+
+
+
+4B. Multiple Inheritance
+
+
+# Parent class 1
+class Student:
+    def student_info(self):
+        self.student_name = "Nasrullah"
+
+
+# Parent class 2
+class Fee:
+    def fee_info(self):
+        self.fee_status = "Paid"
+
+
+# Child Class (Multiple Inheritance)
+class Dashboard(Student, Fee):
+    def display_details(self):
+        print("Student Name :", self.student_name)
+        print("Fee Status :", self.fee_status)
+
+
+# Calling Class
+d = Dashboard()
+
+
+d.student_info()
+d.fee_info()
+d.display_details()
+
+
+
+
+
+
+4C. Multilevel Inheritance
+
+
+# Grandparent Class
+class Student:
+    def student_info(self):
+        self.student_name = "Nasrullah"
+
+
+# Parent Class (inherits Student)
+class Fee(Student):
+    def fee_info(self):
+        self.fee_status = "Paid"
+
+
+# Child Class (inherits Fee)
+class Dashboard(Fee):
+    def display_details(self):
+        print("Student Name :", self.student_name)
+        print("Fee Status :", self.fee_status)
+
+
+# Calling Class
+d = Dashboard()
+
+
+d.student_info()
+d.fee_info()
+d.display_details()
