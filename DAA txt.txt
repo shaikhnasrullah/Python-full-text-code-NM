@@ -1,0 +1,520 @@
+Practical 1: Arrays
+Aim:
+To perform operations on 1D and 2D arrays in Python.
+----------------------------------------------------------------------------------
+
+
+1D Array
+
+
+Arr = [10, 20, 30, 40, 50]
+
+
+Print(arr)
+Print(arr[2])
+
+
+Arr[2] = 35
+Print(arr)
+
+
+Arr.append(60)
+Print(arr)
+
+
+Arr.insert(1, 15)
+Print(arr)
+
+
+Arr.remove(40)
+Print(arr)
+
+
+Arr.pop()
+Print(arr)
+
+
+Arr.pop(2)
+Print(arr)
+
+
+Print(arr.index(50))
+
+
+Arr.reverse()
+Print(arr)
+
+
+Print(arr.count(20))
+
+
+----------------------------------------------------------------------------------
+
+
+2D Array
+
+
+Arr_2d = [
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+]
+
+
+Print(arr_2d)
+Print(arr_2d[1][2])
+
+
+Arr_2d[0][1] = 25
+Print(arr_2d)
+
+
+Arr_2d.append([100, 110, 120])
+Print(arr_2d)
+
+
+Arr_2d.insert(1, [15, 16, 17])
+Print(arr_2d)
+
+
+Arr_2d.remove([70, 80, 90])
+Print(arr_2d)
+
+
+Arr_2d.pop()
+Print(arr_2d)
+
+
+Arr_2d.pop(1)
+Print(arr_2d)
+
+
+Print(arr_2d.index([40, 50, 60]))
+
+
+Arr_2d.reverse()
+Print(arr_2d)
+
+
+Print(arr_2d.count([10, 25, 30]))
+
+
+
+
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+Practical 2: Stack
+
+
+Aim:
+
+
+To implement stack operations using Python list.
+
+
+Stack = []
+
+
+Stack.append(10)
+Stack.append(20)
+Stack.append(30)
+Stack.append(40)
+Stack.append(50)
+
+
+Print(“Stack:”, stack)
+
+
+Print(“Popped:”, stack.pop())
+Print(“After pop:”, stack)
+
+
+Print(“Top element:”, stack[-1])
+Print(“Is empty:”, len(stack) == 0)
+Print(“Size:”, len(stack))
+
+
+Stack.clear()
+Print(“After clear:”, stack)
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+Practical 3: Searching
+Aim:
+To implement linear and binary search algorithms.
+
+
+Linear Search
+
+
+Def linear_search(arr, target):
+    For I in range(len(arr)):
+        If arr[i] == target:
+            Return i
+    Return -1
+
+
+Print(linear_search([5, 3, 8, 6, 2], 8))
+
+
+Recursive Linear Search
+
+
+Def linear_search_recursive(arr, target, index=0):
+    If index == len(arr):
+        Return -1
+    If arr[index] == target:
+        Return index
+    Return linear_search_recursive(arr, target, index + 1)
+
+
+Print(linear_search_recursive([5, 3, 8, 6, 2], 6))
+
+
+Binary Search
+
+
+Def binary_search(arr, target):
+    Low = 0
+    High = len(arr) – 1
+
+
+    While low <= high:
+        Mid = (low + high) // 2
+
+
+        If arr[mid] == target:
+            Return mid
+        Elif arr[mid] < target:
+            Low = mid + 1
+        Else:
+            High = mid – 1
+
+
+    Return -1
+
+
+Arr = [2, 3, 5, 6, 8]
+Print(binary_search(arr, 6))
+
+
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+Practical 4: Sorting
+
+
+Aim:
+
+
+To implement different sorting algorithms.
+
+
+Bubble Sort
+
+
+Def bubbleSort(arr):
+    N = len(arr)
+    For I in range(n):
+        For j in range(0, n-i-1):
+            If arr[j] > arr[j+1]:
+                Arr[j], arr[j+1] = arr[j+1], arr[j]
+
+
+Arr = [64, 34, 25, 12, 22, 11, 90]
+bubbleSort(arr)
+print(arr)
+
+
+Selection Sort
+
+
+Def selectionSort(arr):
+    For I in range(len(arr)):
+        Min_idx = i
+        For j in range(i+1, len(arr)):
+            If arr[j] < arr[min_idx]:
+                Min_idx = j
+        Arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+
+Arr = [64, 25, 12, 22, 11]
+selectionSort(arr)
+print(arr)
+
+
+Insertion Sort
+
+
+Def insertionSort(arr):
+    For I in range(1, len(arr)):
+        Key = arr[i]
+        J = I – 1
+
+
+        While j >= 0 and arr[j] > key:
+            Arr[j+1] = arr[j]
+            J -= 1
+
+
+        Arr[j+1] = key
+
+
+Arr = [12, 11, 13, 5, 6]
+insertionSort(arr)
+print(arr)
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+Practical 6: Pattern Matching
+
+
+Aim:
+
+
+To find a pattern in a given string.
+
+
+Def pattern_search(text, pattern):
+    For I in range(len(text) – len(pattern) + 1):
+        If text[i:i+len(pattern)] == pattern:
+            Print(“Pattern found at index:”, i)
+
+
+Pattern_search(“ABCDEFGHIJKLMNOPQRSTUVWXYZ”, “CDE”)
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+Practical 7: Recursion
+
+
+Aim:
+
+
+To implement recursion using factorial and Fibonacci.
+
+
+Factorial
+
+
+Def factorial(n):
+    If n <= 1:
+        Return 1
+    Return n * factorial(n-1)
+
+
+Print(factorial(5))
+
+
+Fibonacci
+
+
+Def fibonacci(n):
+    If n <= 1:
+        Return n
+    Return fibonacci(n-1) + fibonacci(n-2)
+
+
+Print(fibonacci(6))
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+Practical 8: Merge Sort
+
+
+Aim:
+
+
+To implement merge sort algorithm.
+
+
+Def merge_sort(arr):
+    If len(arr) <= 1:
+        Return arr
+
+
+    Mid = len(arr)//2
+    Left = merge_sort(arr[:mid])
+    Right = merge_sort(arr[mid:])
+
+
+    Return merge(left, right)
+
+
+Def merge(left, right):
+    Result = []
+    I = j = 0
+
+
+    While I < len(left) and j < len(right):
+        If left[i] < right[j]:
+            Result.append(left[i])
+            I += 1
+        Else:
+            Result.append(right[j])
+            J += 1
+
+
+    Result.extend(left[i:])
+    Result.extend(right[j:])
+    Return result
+
+
+Print(merge_sort([38, 27, 43, 3, 9]))
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+Practical 9: Dynamic Programming
+Aim:
+To implement Fibonacci using dynamic programming.
+
+
+Def fibonacci(n):
+    Dp = [0]*(n+1)
+    Dp[1] = 1
+
+
+    For I in range(2, n+1):
+        Dp[i] = dp[i-1] + dp[i-2]
+
+
+    Return dp[n]
+
+
+Print(fibonacci(10))
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+Practical 10A: GCD and LCM
+Aim:
+To find GCD and LCM of two numbers.
+
+
+Def gcd(a, b):
+    While b:
+        A, b = b, a % b
+    Return a
+
+
+Def lcm(a, b):
+    Return (a*b)//gcd(a,b)
+
+
+A = int(input(“Enter first number: “))
+B = int(input(“Enter second number: “))
+
+
+Print(“GCD:”, gcd(a, b))
+Print(“LCM:”, lcm(a, b))
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+Practical 10B: Time Complexity
+
+
+Aim:
+
+
+To analyze time taken for sum of numbers.
+
+
+Method 1
+
+
+Import time
+
+
+N = 100000
+Start = time.time()
+
+
+S = 0
+For I in range(1, n+1):
+    S += i
+
+
+End = time.time()
+
+
+Print(“Sum:”, s)
+Print(“Time:”, end-start)
+
+
+Method 2
+
+
+Import time
+
+
+N = 100000
+Start = time.time()
+
+
+S = n*(n+1)//2
+
+
+End = time.time()
+
+
+Print(“Sum:”, s)
+Print(“Time:”, end-start)
+
+
+Graph
+
+
+Import matplotlib.pyplot as plt
+
+
+X = [1,2,3,4,5]
+Y = [1,4,9,16,25]
+
+
+Plt.plot(x,y)
+Plt.show()
+
+
+
+
+
