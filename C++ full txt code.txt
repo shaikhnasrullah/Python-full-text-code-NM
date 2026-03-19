@@ -1,0 +1,589 @@
+1) Aim: To understand tokens in C++
+
+
+#include <iostream>
+Using namespace std;
+
+
+Int main() {
+    Int age = 20;
+    Float marks = 95.5;
+    Char grade = ‘A’;
+
+
+    Cout << “Age: “ << age << endl;
+    Cout << “Marks: “ << marks << endl;
+    Cout << “Grade: “ << grade << endl;
+
+
+    Return 0;
+}
+
+
+------------------------------------------------------------------------------------
+
+
+ 2) Aim: To study different types of constants
+
+
+#include <iostream>
+Using namespace std;
+
+
+Int main() {
+    Const int a = 10;
+    Const float b = 3.14;
+    Const char c = ‘A’;
+    Const string d = “Hello”;
+
+
+    Cout << a << endl;
+    Cout << b << endl;
+    Cout << c << endl;
+    Cout << d << endl;
+
+
+    Return 0;
+}
+
+
+
+
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+ 3) Aim: To study the structure of C++ program
+
+
+#include <iostream>
+Using namespace std;
+
+
+Int main() {
+    Cout << “Structure of C++ Program”;
+    Return 0;
+}
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+4) Aim: To write a simple C++ program
+
+
+#include <iostream>
+Using namespace std;
+
+
+Int main() {
+    Cout << “Hello World!”;
+    Return 0;
+}
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+ 5) Aim: To understand compiling and running C++ program
+
+
+#include <iostream>
+#include <string>
+Using namespace std;
+
+
+Int main() {
+    Const int rollnumber = 26;
+    Const float pi = 3.14;
+    Const char grade = ‘A’;
+    Const string name = “Rehan”;
+
+
+    Int age = 20;
+    Float marks = 95.5;
+
+
+    Cout << “Student Name: “ << name << endl;
+    Cout << “Roll Number: “ << rollnumber << endl;
+    Cout << “Grade: “ << grade << endl;
+    Cout << “Age: “ << age << endl;
+    Cout << “Marks: “ << marks << endl;
+    Cout << “Value of pi: “ << pi << endl;
+
+
+    Return 0;
+}
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+6) Aim: To demonstrate type casting
+
+
+#include <iostream>
+Using namespace std;
+
+
+Int main() {
+    Int a = 10;
+    Float b = a;
+
+
+    Float x = 9.87f;
+    Int y = (int)x;
+
+
+    Cout << “a: “ << a << “ b: “ << b << endl;
+    Cout << “x: “ << x << “ y: “ << y << endl;
+
+
+    Return 0;
+}
+
+
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+ 7) Aim: To use cin and cout
+
+
+#include <iostream>
+#include <string>
+Using namespace std;
+
+
+Int main() {
+    String name;
+    Int age;
+    Float marks;
+
+
+    Cout << “Enter name: “;
+    Cin >> name;
+    Cout << “Enter age: “;
+    Cin >> age;
+    Cout << “Enter marks: “;
+    Cin >> marks;
+
+
+    Cout << name << “ “ << age << “ “ << marks;
+
+
+    Return 0;
+}
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+8) Aim: To demonstrate operators
+
+
+#include <iostream>
+Using namespace std;
+
+
+Int main() {
+    Int a = 10, b = 5, c = 2;
+
+
+    Cout << a + b + c << endl;
+    Cout << (a + b) * c << endl;
+    Cout << a / b * c << endl;
+    Cout << a + b – c * 3 << endl;
+
+
+    Return 0;
+}
+
+
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+ 9) Aim: To demonstrate functions
+
+
+Internal Function
+
+
+#include <iostream>
+Using namespace std;
+
+
+Void show() {
+    Cout << “Internal Function”;
+}
+
+
+Int main() {
+    Show();
+    Return 0;
+}
+
+
+Inline Function
+
+
+#include <iostream>
+Using namespace std;
+
+
+Inline void show() {
+    Cout << “Inline Function”;
+}
+
+
+Int main() {
+    Show();
+    Return 0;
+}
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+ 10) Aim: To demonstrate class and object
+
+
+#include <iostream>
+Using namespace std;
+
+
+Class Student {
+Public:
+    Void show() {
+        Cout << “Sameer”;
+    }
+};
+
+
+Int main() {
+    Student s;
+    s.show();
+    return 0;
+}
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+ 11) Aim: To demonstrate pass by reference
+
+
+#include <iostream>
+Using namespace std;
+
+
+Void show(int &a) {
+    A = a + 10;
+}
+
+
+Int main() {
+    Int x = 5;
+    Show(x);
+    Cout << x;
+
+
+    Return 0;
+}
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+12) Aim: To study constructors and destructors
+
+
+#include <iostream>
+Using namespace std;
+
+
+Class A {
+Public:
+    A() {
+        Cout << “Default Constructor” << endl;
+    }
+    A(int x) {
+        Cout << “Parameterized Constructor” << endl;
+    }
+    A(const A &obj) {
+        Cout << “Copy Constructor” << endl;
+    }
+    ~A() {
+        Cout << “Destructor” << endl;
+    }
+};
+
+
+Int main() {
+    A a;
+    A b(2);
+    A c(b);
+
+
+    Return 0;
+}
+
+
+
+
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+ 13) Aim: To study static members and accessor functions
+
+
+#include <iostream>
+Using namespace std;
+
+
+Class A {
+Private:
+    String name;
+    Static int roll;
+
+
+Public:
+    Void setName(string x) {
+        Name = x;
+    }
+
+
+    String getName() {
+        Return name;
+    }
+
+
+    Static int getRoll() {
+        Return roll;
+    }
+};
+
+
+Int A::roll = 101;
+
+
+Int main() {
+    A a1, a2;
+
+
+    A1.setName(“Sameer”);
+    A2.setName(“Ali”);
+
+
+    Cout << a1.getName() << endl;
+    Cout << a2.getName() << endl;
+    Cout << A::getRoll();
+
+
+    Return 0;
+}
+
+
+----------------------------------------------------------------------------------
+
+
+
+
+14) Aim: To study polymorphism
+
+
+Function Overloading
+
+
+#include <iostream>
+Using namespace std;
+
+
+Class A {
+Public:
+    Void add(int x, int y) {
+        Cout << x + y << endl;
+    }
+
+
+    Void add(double x, double y) {
+        Cout << x + y << endl;
+    }
+};
+
+
+Int main() {
+    A a;
+    a.add(1, 4);
+    a.add(1.2, 3.8);
+
+
+    return 0;
+}
+
+
+
+
+
+
+Operator Overloading
+
+
+#include <iostream>
+Using namespace std;
+
+
+Class Demo {
+Public:
+    Int a;
+
+
+    Demo operator+(Demo b) {
+        Demo c;
+        c.a = a + b.a;
+        return c;
+    }
+};
+
+
+Int main() {
+    Demo x, y, z;
+
+
+    x.a = 5;
+    y.a = 10;
+
+
+    z = x + y;
+
+
+    cout << z.a;
+
+
+    return 0;
+}
+
+
+
+
+
+
+ 
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+15) Aim: To study inheritance
+
+
+Single Inheritance
+
+
+#include <iostream>
+Using namespace std;
+
+
+Class Person {
+Public:
+    Void showPerson() {
+        Cout << “Person” << endl;
+    }
+};
+
+
+Class Student : public Person {
+Public:
+    Void showStudent() {
+        Cout << “Student” << endl;
+    }
+};
+
+
+Int main() {
+    Student s;
+    s.showPerson();
+    s.showStudent();
+
+
+    return 0;
+}
+
+
+
+
+
+
+Multilevel Inheritance
+
+
+#include <iostream>
+Using namespace std;
+
+
+Class Person {
+Public:
+    Void showPerson() {
+        Cout << “Person” << endl;
+    }
+};
+
+
+Class Student : public Person {
+Public:
+    Void showStudent() {
+        Cout << “Student” << endl;
+    }
+};
+
+
+Class Library : public Student {
+Public:
+    Void showLibrary() {
+        Cout << “Library” << endl;
+    }
+};
+
+
+Int main() {
+    Library l;
+
+
+    l.showPerson();
+    l.showStudent();
+    l.showLibrary();
+
+
+    return 0;
+}
+
